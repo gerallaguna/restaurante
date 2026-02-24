@@ -1,0 +1,18 @@
+style
+footer{
+background:linear-gradient(135deg, #198754, #145c32);
+}
+
+.red-icono img{
+transition:transform 0.3s ease, filter 0.3s ease;
+border-radius:50%;
+}
+
+.red-icono img:hover{
+transform:scale(1.2);
+filter:brightness(1.2);
+}
+
+footer h3{
+letter-spacing: 1px;
+}

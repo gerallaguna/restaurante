@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabores del Campo | Reserva</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* NAVBAR MORADA (NO SE TOCA) */
+.navbar-morado {
+    background: linear-gradient(135deg, #8e44ad, #c39bd3);
+}
+
+/* FOOTER MORADO (NO SE TOCA) */
+.footer-morado {
+    background: linear-gradient(135deg, #8e44ad, #c39bd3);
+}
+
+/* Letras del menú */
+.navbar-morado .nav-link {
+    color: white !important;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar-morado .nav-link:hover {
+    color: #ffd1ff !important;
+    transform: scale(1.05);
+}
+
+/* Fondo elegante */
+body {
+    background: linear-gradient(to right, #f3e8ff, #fdfbff);
+    min-height: 100vh;
+}
+
+/* Tarjeta moderna */
+.form-container {
+    max-width: 520px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #8e44ad;
+}
+
+/* Inputs elegantes */
+.form-control, .form-select {
+    border-radius: 12px;
+    padding: 12px;
+    transition: 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #8e44ad;
+    box-shadow: 0 0 10px rgba(142, 68, 173, 0.4);
+}
+
+/* Botón elegante */
+.btn-morado {
+    background: linear-gradient(135deg, #8e44ad, #c39bd3);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-morado:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(142,68,173,0.3);
+}
+
+/* Confirmación bonita */
+.mensaje-confirmacion {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: #e8d5ff;
+    color: #4a235a;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Iconos footer animación */
+.footer-morado img {
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+}
+
+.footer-morado img:hover {
+    transform: scale(1.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-morado">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Sabores del Campo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- FORMULARIO -->
+<div class="form-container">
+    <h2>Reserva tu mesa</h2>
+
+    <div class="mb-3">
+        <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
+    </div>
+
+    <div class="mb-3">
+        <input type="email" class="form-control" id="correo" placeholder="Correo electrónico">
+    </div>
+
+    <div class="mb-3">
+        <input type="date" class="form-control" id="fecha">
+    </div>
+
+    <div class="mb-3">
+        <input type="time" class="form-control" id="hora">
+    </div>
+
+    <div class="mb-3">
+        <select class="form-select" id="personas">
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">5 personas</option>
+        </select>
+    </div>
+
+    <button class="btn btn-morado w-100" onclick="reservar()">Reservar ahora</button>
+
+    <div id="mensaje" class="mensaje-confirmacion"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-morado text-white text-center py-5 mt-5">
+    <div class="container">
+        <h3 class="fw-bold mb-3">Síguenos en redes sociales</h3>
+        <p class="mb-4">Conoce nuestras comidas caseras y promociones</p>
+
+        <div class="d-flex justify-content-center gap-4 mb-4">
+            <img src="imagenes/facebook_.avif" width="55">
+            <img src="imagenes/instagram-.png" width="55">
+            <img src="imagenes/WhatsApp.svg.webp" width="55">
+        </div>
+
+        <hr class="border-light">
+        <p class="mb-0">©️ 2026 Sabores del Campo | Comida Casera con Amor 🍽️</p>
+    </div>
+</footer>
+
+<script>
+function reservar(){
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
+    let fecha = document.getElementById("fecha").value;
+    let hora = document.getElementById("hora").value;
+    let personas = document.getElementById("personas").value;
+    let mensaje = document.getElementById("mensaje");
+
+    if(nombre === "" || correo === "" || fecha === "" || hora === ""){
+        mensaje.style.display = "block";
+        mensaje.style.background = "#f8d7da";
+        mensaje.style.color = "#721c24";
+        mensaje.innerHTML = "⚠️ Por favor complete todos los campos.";
+    } else {
+        mensaje.style.display = "block";
+        mensaje.style.background = "#e8d5ff";
+        mensaje.style.color = "#4a235a";
+        mensaje.innerHTML = "✅ Reserva confirmada para <b>" + nombre +
+              "</b><br>📅 " + fecha +
+              " ⏰ " + hora +
+              "<br>👥 " + personas + " persona(s)";
+    }
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
